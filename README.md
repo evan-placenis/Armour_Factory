@@ -56,7 +56,7 @@ Armour Generation:<br />
  &emsp;&emsp;   ○ Defines the “getDescription” method that will be used in (helmet/chestplate/ring)<br />
 &emsp; &emsp;&emsp;     to return a string of the name of armour<br />
  &emsp;&emsp;   ○ Defines a int “slot” to tell the user which slot the armour is in<br />
-&emsp; &emsp; ● Armour (Helmet/ChestPlate/Ring) class<br />
+ &emsp; ● Armour (Helmet/ChestPlate/Ring) class<br />
  &emsp;&emsp;   ○ Implements the Armor abstract class and overwrites the int “slot” in the Armour<br />
 &emsp;  &emsp;&emsp;    class with the slot number of the armour being generated.<br />
   &emsp;&emsp;  ○ Implements the “getDescription” method returning a string of the name of the<br />
@@ -69,7 +69,7 @@ Decorating The Armour:<br />
  &emsp; ● ArmourDecorator class<br />
  &emsp;&emsp;   ○ Implements the “factory” interface and defines a string “description” object to be<br />
 &emsp; &emsp;&emsp;     returned to the user<br />
- &emsp;   ○ Implements a “wrapArmour” method that first adds to the description the slot of<br />
+ &emsp;&emsp;   ○ Implements a “wrapArmour” method that first adds to the description the slot of<br />
 &emsp; &emsp;&emsp;     the armour being wrapped. Adds to the description the rarity name and then the<br />
   &emsp;  &emsp;&emsp;  armour name. Uses the rarity.getNumOfAttributes call to determine how many<br />
   &emsp;  &emsp;&emsp;  attributes to decorate the armour with. Randomly generates the attributes in a for<br />
