@@ -29,12 +29,12 @@ am easily able to use the rarity type to determine how many attributes to wrap t
 
 Design Usage<br />
 Rarity Generation:<br />
-  ● RarityFactory Interface<br />
-    ○ Defines a “spawnRarity” method that takes in enemy string and returns a Rarity<br />
-  ● RaritySpawner class<br />
-    ○ Implements the Rarity factory and uses a “levelOfEnemy” method to generate the<br />
-      level of rarity to be created based on the difficulty of the enemy the user<br />
-       defeated.<br />
+  &nbsp● RarityFactory Interface<br />
+   &nbsp&nbsp ○ Defines a “spawnRarity” method that takes in enemy string and returns a Rarity<br />
+ &nbsp ● RaritySpawner class<br />
+  &nbsp&nbsp  ○ Implements the Rarity factory and uses a “levelOfEnemy” method to generate the<br />
+     &nbsp&nbsp level of rarity to be created based on the difficulty of the enemy the user<br />
+     &nbsp&nbsp  defeated.<br />
   ● Rarity abstract class<br />
      ○ Defines the integer object “numOfAttributes” and methods “getDescription” as<br />
         well as “getNumOfAttributes” to be used in each rarity object (common,<br />
