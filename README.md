@@ -27,63 +27,63 @@ that the more attributes added, the combinations of attributes exponentially gro
 decorator pattern also allows me to add and remove attributes with ease and with this pattern I
 am easily able to use the rarity type to determine how many attributes to wrap the armor with.
 
-Design Usage
-Rarity Generation:
-  ● RarityFactory Interface
-    ○ Defines a “spawnRarity” method that takes in enemy string and returns a Rarity
-  ● RaritySpawner class
-    ○ Implements the Rarity factory and uses a “levelOfEnemy” method to generate the
-      level of rarity to be created based on the difficulty of the enemy the user
-       defeated.
-  ● Rarity abstract class
-     ○ Defines the integer object “numOfAttributes” and methods “getDescription” as
-        well as “getNumOfAttributes” to be used in each rarity object (common,
-        uncommon, rare).
-  ● Rarity (Common/Uncommon/rare) class
-     ○ Implements the “getDescription method in the Rarity abstract class to return the
-        the name of the rarity
-     ○ Overwrites the “numOfAttribtues” integer in the Rarity class to equal 1,2 or 3
-        (depending on the rarity)
-     ○ Implements the “getNumOfAttributes” method by returning the integer
-Armour Generation:
-  ● ArmourFactory Interface
-    ○ Defines a “spawnArmour” method that returns an Armour type to be used in
-      “ArmourSpawner”
-  ● ArmourSpawner class
-    ○ Implements the ArmourFactory and uses spawnArmour to generate and return a
-      random Armour.
-  ● Armour Abstract class
-    ○ Defines the “getDescription” method that will be used in (helmet/chestplate/ring)
-      to return a string of the name of armour
-    ○ Defines a int “slot” to tell the user which slot the armour is in
-  ● Armour (Helmet/ChestPlate/Ring) class
-    ○ Implements the Armor abstract class and overwrites the int “slot” in the Armour
-      class with the slot number of the armour being generated.
-    ○ Implements the “getDescription” method returning a string of the name of the
-      armour being generated.
-Decorating The Armour:
-  ● Factory interface
-     ○ Defines a method “wrapArmour” method that takes in an armour and rarity to
-      decorate the armour with (used in ArmourDecorator).
-     ○ Also defines a “getDescription” method to return to the user (main)
-  ● ArmourDecorator class
-    ○ Implements the “factory” interface and defines a string “description” object to be
-      returned to the user
-    ○ Implements a “wrapArmour” method that first adds to the description the slot of
-      the armour being wrapped. Adds to the description the rarity name and then the
-      armour name. Uses the rarity.getNumOfAttributes call to determine how many
-      attributes to decorate the armour with. Randomly generates the attributes in a for
-      loop (set to the amount of attributes to add) adding to the description the attribute
-      being added each call.
-    ○ Implements the “getDescription” method that return the string “description” which
-      is the product of the armour, rarity, and attributes added
-  ● Attribute (Dexterify/Strength) class
-    ○ Implements a default constructor
-    ○ Has a “getDescription” method to return the string of the Attribute being
-      generated
-Other:
-  ● Class Enemy
-    ○ Used in main class to randomly return a string of the enemy the user defeated to
-      be used in the “raritySpawner” class
+Design Usage<br />
+Rarity Generation:<br />
+  ● RarityFactory Interface<br />
+    ○ Defines a “spawnRarity” method that takes in enemy string and returns a Rarity<br />
+  ● RaritySpawner class<br />
+    ○ Implements the Rarity factory and uses a “levelOfEnemy” method to generate the<br />
+      level of rarity to be created based on the difficulty of the enemy the user<br />
+       defeated.<br />
+  ● Rarity abstract class<br />
+     ○ Defines the integer object “numOfAttributes” and methods “getDescription” as<br />
+        well as “getNumOfAttributes” to be used in each rarity object (common,<br />
+        uncommon, rare).<br />
+  ● Rarity (Common/Uncommon/rare) class<br />
+     ○ Implements the “getDescription method in the Rarity abstract class to return the<br />
+        the name of the rarity<br />
+     ○ Overwrites the “numOfAttribtues” integer in the Rarity class to equal 1,2 or 3<br />
+        (depending on the rarity)<br />
+     ○ Implements the “getNumOfAttributes” method by returning the integer<br />
+Armour Generation:<br />
+  ● ArmourFactory Interface<br />
+    ○ Defines a “spawnArmour” method that returns an Armour type to be used in<br />
+      “ArmourSpawner”<br />
+  ● ArmourSpawner class<br />
+    ○ Implements the ArmourFactory and uses spawnArmour to generate and return a<br />
+      random Armour.<br />
+  ● Armour Abstract class<br />
+    ○ Defines the “getDescription” method that will be used in (helmet/chestplate/ring)<br />
+      to return a string of the name of armour<br />
+    ○ Defines a int “slot” to tell the user which slot the armour is in<br />
+  ● Armour (Helmet/ChestPlate/Ring) class<br />
+    ○ Implements the Armor abstract class and overwrites the int “slot” in the Armour<br />
+      class with the slot number of the armour being generated.<br />
+    ○ Implements the “getDescription” method returning a string of the name of the<br />
+      armour being generated.<br />
+Decorating The Armour:<br />
+  ● Factory interface<br />
+     ○ Defines a method “wrapArmour” method that takes in an armour and rarity to<br />
+      decorate the armour with (used in ArmourDecorator).<br />
+     ○ Also defines a “getDescription” method to return to the user (main)<br />
+  ● ArmourDecorator class<br />
+    ○ Implements the “factory” interface and defines a string “description” object to be<br />
+      returned to the user<br />
+    ○ Implements a “wrapArmour” method that first adds to the description the slot of<br />
+      the armour being wrapped. Adds to the description the rarity name and then the<br />
+      armour name. Uses the rarity.getNumOfAttributes call to determine how many<br />
+      attributes to decorate the armour with. Randomly generates the attributes in a for<br />
+      loop (set to the amount of attributes to add) adding to the description the attribute<br />
+      being added each call.<br />
+    ○ Implements the “getDescription” method that return the string “description” which<br />
+      is the product of the armour, rarity, and attributes added<br />
+  ● Attribute (Dexterify/Strength) class<br />
+    ○ Implements a default constructor<br />
+    ○ Has a “getDescription” method to return the string of the Attribute being<br />
+      generated<br />
+Other:<br />
+  ● Class Enemy<br />
+    ○ Used in main class to randomly return a string of the enemy the user defeated to<br />
+      be used in the “raritySpawner” class<br />
 
 
