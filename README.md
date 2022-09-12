@@ -1,7 +1,7 @@
 # Armour_Factory
 This is a game that revolves around randomly dropping loot from an enemy. This loot has a rarity, armor type, and boosts the player's attributes depending on the rarity. The purpose of this is to practice the factory and decorator design pattern. 
 
-Factory:
+Factory:<br />
 The factory pattern makes code more robust, less coupled, and easy to extend. I decided this
 was the correct choice to spawn armor. The factory method allows me to add new armor without
 opening and changing the existing code making it a robust choice. It also reduces the amount of
@@ -16,7 +16,7 @@ the same armor which isn’t correct. By also spawning a rarity along with an ar
 have the same benefits the factory pattern provides on adding and removing rarities. With this
 implementation I am able to spawn a rarity and use it in conjunction with a spawned armor.
 
-Decorator:
+Decorator:<br />
 The decorator pattern allows for greater flexibility than regular static inheritance. It enhances the
 ability to extend attributes of an object through coding new classes. This simplifies the coding by
 allowing me to develop a series of attributes from classes instead of coding all the behavior into
